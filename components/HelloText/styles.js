@@ -6,4 +6,5 @@ export const StyledHelloText = styled.h1`
   font-weight: bold;
   line-height: 1.25;
   margin: 1rem 0;
+  margin-top: 100px;
 `
