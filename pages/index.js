@@ -4,17 +4,17 @@ import Layout from 'components/Layout'
 import Header from 'components/Header'
 import HelloText from 'components/HelloText'
 import Text from 'components/Text'
-import ExternalLink from 'components/ExternalLink'
+import Link from 'components/Link'
+import Nav from 'components/Nav'
 
 const IndexPage = () => {
   return (
     <Layout>
+      <Nav />
       <div className="half-content">
         <Header />
         <HelloText />
-        <Text>
-          My name is <strong>Sagar Gavhane</strong>.
-        </Text>
+        <Text>My name is Sagar Gavhane.</Text>
         <Text>
           Passionate software engineer with 3.5 years of experience building
           products for different domains like retail, e-commerce, real estate,
@@ -24,27 +24,41 @@ const IndexPage = () => {
           <span>
             I’m currently available for work, you can take a look at my{' '}
           </span>
-          <ExternalLink text="resume" href="https://resume.io/r/zUMxWOl6F" />.
+          <Link
+            text="resume"
+            href="https://resume.io/r/zUMxWOl6F"
+            isExternalLink
+          />
+          .
         </Text>
         <Text>
           <span>
             I have an old blog which I no longer actively update - you probably
             want to follow me on{' '}
           </span>
-          <ExternalLink text="Twitter" href="https://twitter.com/sagar_codes" />
+          <Link
+            text="Twitter"
+            href="https://twitter.com/sagar_codes"
+            isExternalLink
+          />
           <span>, </span>
-          <ExternalLink
+          <Link
             text="Medium"
             href="https://medium.com/@sagar_gavhane"
+            isExternalLink
           />
           <span>, and </span>
-          <ExternalLink text="Dev" href="https://dev.to/sagar" />
+          <Link text="Dev" href="https://dev.to/sagar" isExternalLink />
           <span>
             {' '}
             for more up-to-date content. Most of my work is open source and
             publicly available on{' '}
           </span>
-          <ExternalLink text="GitHub" href="https://github.com/sagar-gavhane" />
+          <Link
+            text="GitHub"
+            href="https://github.com/sagar-gavhane"
+            isExternalLink
+          />
           .
         </Text>
         <Text>
