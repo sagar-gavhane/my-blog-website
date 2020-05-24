@@ -8,7 +8,6 @@ const BlogsPage = props => {
   return (
     <div>
       <Layout>
-        <div>Blog works!!</div>
         <ul>
           {props.posts.map(post => {
             return (
