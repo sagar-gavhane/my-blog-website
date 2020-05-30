@@ -1,4 +1,6 @@
 import React from 'react'
+import { ThemeProvider } from 'styled-components'
+
 import 'styles/global.css'
 
 if (process.env.NODE_ENV !== 'production' && typeof window !== 'undefined') {
@@ -8,7 +10,11 @@ if (process.env.NODE_ENV !== 'production' && typeof window !== 'undefined') {
 }
 
 const MyApp = ({ Component, pageProps }) => {
-  return <Component {...pageProps} />
+  return (
+    <ThemeProvider theme={{}}>
+      <Component {...pageProps} />
+    </ThemeProvider>
+  )
 }
 
 export default MyApp
