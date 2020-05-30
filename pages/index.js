@@ -1,4 +1,5 @@
 import React from 'react'
+import Head from 'next/head'
 
 import Layout from 'components/Layout'
 import Header from 'components/Header'
@@ -10,6 +11,9 @@ import Nav from 'components/Nav'
 const IndexPage = () => {
   return (
     <Layout>
+      <Head>
+        <title>Sagar Gavhane : Software Engineer</title>
+      </Head>
       <Nav />
       <div className="half-content">
         <Header />

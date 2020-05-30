@@ -6,7 +6,7 @@ import { StyledNav } from './styles'
 
 const Nav = () => {
   return (
-    <StyledNav>
+    <StyledNav role="navigation">
       <Link text="Blogs" href="/blogs" />
       <Link text="Portfolio" href="/portfolio" />
     </StyledNav>

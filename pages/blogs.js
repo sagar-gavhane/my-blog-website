@@ -5,21 +5,19 @@ import Layout from 'components/Layout'
 
 const BlogsPage = props => {
   return (
-    <div>
-      <Layout>
-        <ul>
-          {props.blogs.map(blog => {
-            return (
-              <li key={blog.id}>
-                <Link href={`/blog/${blog.slug}`}>
-                  <a>{blog.title}</a>
-                </Link>
-              </li>
-            )
-          })}
-        </ul>
-      </Layout>
-    </div>
+    <Layout>
+      <ul>
+        {props.blogs.map(blog => {
+          return (
+            <li key={blog.id}>
+              <Link href={`/blog/${blog.slug}`}>
+                <a>{blog.title}</a>
+              </Link>
+            </li>
+          )
+        })}
+      </ul>
+    </Layout>
   )
 }
 
