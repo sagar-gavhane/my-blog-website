@@ -2,18 +2,17 @@ import React from 'react'
 import Link from 'next/link'
 
 import Layout from 'components/Layout'
-import getAllPosts from 'utils/getAllPosts'
 
 const BlogsPage = props => {
   return (
     <div>
       <Layout>
         <ul>
-          {props.posts.map(post => {
+          {props.blogs.map(blog => {
             return (
-              <li key={post.slug}>
-                <Link href={`/blog/${post.slug}`}>
-                  <a>{post.title}</a>
+              <li key={blog.id}>
+                <Link href={`/blog/${blog.slug}`}>
+                  <a>{blog.title}</a>
                 </Link>
               </li>
             )
@@ -25,9 +24,12 @@ const BlogsPage = props => {
 }
 
 export async function getStaticProps() {
-  const posts = getAllPosts(['title', 'date', 'slug'])
+  const getAllBlogs = require('utils/getAllBlogs').default
+
   return {
-    props: { posts },
+    props: {
+      blogs: getAllBlogs(),
+    },
   }
 }
 

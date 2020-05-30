@@ -1,5 +1,6 @@
 ---
 title: Three dots ( … ) in JavaScript
+slug: 'three-dots-in-javascript'
 date: '2018-09-18'
 ---
 

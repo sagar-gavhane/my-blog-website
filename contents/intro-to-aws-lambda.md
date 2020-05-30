@@ -1,5 +1,6 @@
 ---
 title: Introduction to AWS Lambda
+slug: 'intro-to-aws-lambda'
 date: '2018-09-09'
 ---
 

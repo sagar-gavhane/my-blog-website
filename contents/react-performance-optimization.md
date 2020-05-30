@@ -1,5 +1,6 @@
 ---
 title: React Performance Optimization
+slug: 'react-performance-optimization'
 date: '2020-04-26'
 ---
 
@@ -249,7 +250,7 @@ const MemoizedInput = React.memo(Input, isEqual)
 function App() {
   const [username, setUsername] = React.useState('')
 
-  const handleOnChange = React.useCallback((e) => {
+  const handleOnChange = React.useCallback(e => {
     setUsername(e.target.value)
   }, [])
 

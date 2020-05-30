@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, Fragment } from 'react'
 
 import IconMenu from 'assets/icons/IconMenu'
 import OpenedMenu from 'components/OpenedMenu'
@@ -8,14 +8,13 @@ import { StyledWrapper } from './styles'
 const Header = () => {
   const [showMenu, setShowMenu] = useState(false)
 
-  if (showMenu) {
-    return <OpenedMenu setShowMenu={setShowMenu} />
-  }
-
   return (
-    <StyledWrapper onClick={() => setShowMenu(showMenu => !showMenu)}>
-      <IconMenu />
-    </StyledWrapper>
+    <Fragment>
+      <OpenedMenu showMenu={showMenu} setShowMenu={setShowMenu} />
+      <StyledWrapper onClick={() => setShowMenu(showMenu => !showMenu)}>
+        <IconMenu />
+      </StyledWrapper>
+    </Fragment>
   )
 }
 

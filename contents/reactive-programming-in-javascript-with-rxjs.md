@@ -1,5 +1,6 @@
 ---
 title: 'Reactive Programming in JavaScript with RxJS.'
+slug: 'reactive-programming-in-javascript-with-rxjs'
 date: '2018-09-30'
 ---
 
@@ -78,7 +79,7 @@ If you're still confused, don't worry, this normally doesn't make much sense at 
   ```javascript
   const button = document.querySelector('button')
   const observable = Rx.Observable.fromEvent(button, 'click')
-  const subscription = observable.subscribe((event) => console.log(event))
+  const subscription = observable.subscribe(event => console.log(event))
   // Later:
   // This cancels the ongoing Observable execution which
   // was started by calling subscribe with an Observer.
@@ -121,9 +122,9 @@ If you're still confused, don't worry, this normally doesn't make much sense at 
 - For example,
 
   ```javascript
-  const observable = Rx.Observable.of(1, 2, 3).map((value) => value * value)
+  const observable = Rx.Observable.of(1, 2, 3).map(value => value * value)
 
-  observable.subscribe((x) => console.log(x))
+  observable.subscribe(x => console.log(x))
   // Output:
   // 1
   // 4
@@ -146,10 +147,10 @@ If you're still confused, don't worry, this normally doesn't make much sense at 
   const subject = new Rx.Subject()
 
   subject.subscribe({
-    next: (v) => console.log('observerA: ' + v),
+    next: v => console.log('observerA: ' + v),
   })
   subject.subscribe({
-    next: (v) => console.log('observerB: ' + v),
+    next: v => console.log('observerB: ' + v),
   })
 
   subject.next(1)
@@ -188,7 +189,7 @@ For better understanding, we're going to compare and contrast the ES6 Promise AP
   })
 
   // creating a demoObservable using Rxjs.Observable API
-  const demoObservable = Rx.Observable.create((observer) => {
+  const demoObservable = Rx.Observable.create(observer => {
     asyncOperation((err, value) => {
       if (err) {
         observer.error(err) // instead of reject(err)
@@ -238,7 +239,7 @@ For better understanding, we're going to compare and contrast the ES6 Promise AP
 
   ```javascript
   const observable = Rx.Observable.from([10, 20, 30])
-  const subscription = observable.subscribe((x) => console.log(x))
+  const subscription = observable.subscribe(x => console.log(x))
   // Later:
   subscription.unsubscribe() // its will stop ongoing execution
   ```
@@ -253,18 +254,18 @@ const observable = Rx.Observable.of('foo', 98, false, ['john', 'doe'], {
   gender: 'male',
 })
 
-observable.subscribe((val) => console.log(val))
+observable.subscribe(val => console.log(val))
 ```
 
 **Creating Observables from stream of values**
 
 ```javascript
-const observable = Rx.Observable.create((observer) => {
+const observable = Rx.Observable.create(observer => {
   observer.next('Hello')
   observer.next('Its monday morning!!')
 })
 
-observable.subscribe((value) => console.log(value))
+observable.subscribe(value => console.log(value))
 // output:
 // Hello
 // It's monday morning
@@ -275,7 +276,7 @@ observable.subscribe((value) => console.log(value))
 ```javascript
 const button = document.querySelector('button')
 const observable = Rx.Observable.fromEvent(button, 'click')
-observable.subscribe((event) => console.log(event))
+observable.subscribe(event => console.log(event))
 ```
 
 **Observable from Promise**
@@ -293,7 +294,7 @@ const promise = new Promise((resolve, reject) => {
 
 const Observable = Rx.Observable.fromPromise(promise)
 
-Observable.subscribe((value) => console.log(value))
+Observable.subscribe(value => console.log(value))
 ```
 
 **Observable from Timer method**
@@ -309,7 +310,7 @@ timer.subscribe(() => console.log('timeout!!'))
 ```javascript
 const interval = Rx.Observable.interval(3000)
 
-interval.subscribe((tick) => console.log(`${tick} tick`))
+interval.subscribe(tick => console.log(`${tick} tick`))
 ```
 
 **Map operator**
@@ -317,9 +318,7 @@ interval.subscribe((tick) => console.log(`${tick} tick`))
 ```javascript
 const observable = Rx.Observable.from(2, 4, 6, 8)
 
-observable
-  .map((value) => value * value)
-  .subscribe((result) => console.log(result))
+observable.map(value => value * value).subscribe(result => console.log(result))
 ```
 
 **Do Operator**
@@ -329,10 +328,10 @@ const dogs = Rx.Observable.of('Buddy', 'Charlie', 'Cooper', 'Rocky')
 
 // do operator used for debugging purpose
 dogs
-  .do((dog) => console.log(dog))
-  .filter((dog) => dog === 'Cooper')
-  .do((dog) => console.log(dog))
-  .subscribe((dog) => console.log(dog))
+  .do(dog => console.log(dog))
+  .filter(dog => dog === 'Cooper')
+  .do(dog => console.log(dog))
+  .subscribe(dog => console.log(dog))
 ```
 
 **Debounce and Throttle**
@@ -344,9 +343,9 @@ dogs
 const input = document.querySelector('input')
 const observable = Rx.Observable.fromEvent(input, 'keyup')
 
-observable.debounceTime(3000).subscribe((event) => console.log(event))
+observable.debounceTime(3000).subscribe(event => console.log(event))
 
-observable.throttleTime(1000).subscribe((event) => console.log(event))
+observable.throttleTime(1000).subscribe(event => console.log(event))
 ```
 
 **bufferTime** - Collects values from the past as an array, and emits those arrays periodically in time.
@@ -354,7 +353,7 @@ observable.throttleTime(1000).subscribe((event) => console.log(event))
 ```javascript
 const clicks = Rx.Observable.fromEvent(document, 'click')
 const buffered = clicks.bufferTime(1000)
-buffered.subscribe((x) => console.log(x))
+buffered.subscribe(x => console.log(x))
 ```
 
 **Conclusion**

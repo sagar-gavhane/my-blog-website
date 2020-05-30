@@ -1,5 +1,6 @@
 ---
 title: Build a RESTful API with the Serverless Framework
+slug: 'build-a-restful-api-with-the-serverless-framework'
 date: '2020-03-16T05:35:07.322Z'
 ---
 

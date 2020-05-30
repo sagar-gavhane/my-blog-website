@@ -1,5 +1,6 @@
 ---
 title: Implement a serverless CI/CD pipeline with AWS (Amazon Web Services).
+slug: 'implement-a-serverless-cicd-pipeline-with-aws-amazon-web-services'
 date: '2018-09-15'
 ---
 

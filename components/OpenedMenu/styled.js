@@ -1,16 +1,7 @@
-import styled, { keyframes } from 'styled-components'
+import styled from 'styled-components'
+import { animated } from 'react-spring'
 
-const fadeIn = keyframes`
-  from {
-    height: 0;
-  }
-
-  to {
-    height: 100%;
-  }
-`
-
-export const StyledWrapper = styled.div`
+export const StyledWrapper = styled(animated.div)`
   position: fixed;
   top: 0;
   left: 0;
@@ -20,8 +11,6 @@ export const StyledWrapper = styled.div`
   background: #1e1e3f;
   margin: 0;
   overflow: hidden;
-  animation: ${fadeIn} 500ms ease-in-out;
-  transition: height 500ms ease-in-out;
 `
 
 export const StyledMenuText = styled.h1`

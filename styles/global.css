@@ -12,3 +12,8 @@ body {
   font-weight: 400;
   font-style: normal;
 }
+
+.markdown img {
+  max-width: 100%;
+  height: auto;
+}

@@ -1,5 +1,6 @@
 ---
 title: Code splitting in React
+slug: 'code-splitting-in-react'
 date: '2018-10-07'
 ---
 
@@ -38,7 +39,7 @@ ES modules have few limitations like es module should only appear at the top lev
 For example,
 
 ```jsx
-const double = (x) => x * x
+const double = x => x * x
 import CONSTANTS from './constants/someFile.js' // it will throw an error because we created double function above es import module
 ```
 
@@ -47,7 +48,7 @@ On the other side, both es module limitations have overcome by dynamic import() 
 ```jsx
 const modulePath = './someFile.js' // path of module
 // dynamic import() module
-import(modulePath).then((module) => {
+import(modulePath).then(module => {
   return module.default // return default function of es module
 })
 ```
@@ -70,7 +71,7 @@ Let's create an `asyncComponent` component which takes the desired component thr
 // filename: asyncComponent.jsx
 import React, { Component } from 'react'
 
-const asyncComponent = (getComponent) => {
+const asyncComponent = getComponent => {
   // return AsyncComponent class component
   return class AsyncComponent extends Component {
     static Component = null
@@ -190,7 +191,7 @@ class App extends Component {
     if (!this.state.Greeting) {
       // load Greeting component with dynamic import
       const Greeting = asyncComponent(() => import('./Greeting'))
-      this.setState((prevState) => {
+      this.setState(prevState => {
         return {
           Greeting,
         }
@@ -299,7 +300,7 @@ class App extends Component {
         loader: () => import('./Greeting'),
         loading: Loading,
       })
-      this.setState((prevState) => {
+      this.setState(prevState => {
         return {
           Greeting,
         }
